@@ -1,0 +1,14 @@
+C:\Users\Admin\source\repos\oreoApplicationBackend\BusinessLayer\bin\Debug\netcoreapp3.1\oreoApplicationBusinessLayer.deps.json
+C:\Users\Admin\source\repos\oreoApplicationBackend\BusinessLayer\bin\Debug\netcoreapp3.1\oreoApplicationBusinessLayer.dll
+C:\Users\Admin\source\repos\oreoApplicationBackend\BusinessLayer\bin\Debug\netcoreapp3.1\oreoApplicationBusinessLayer.pdb
+C:\Users\Admin\source\repos\oreoApplicationBackend\BusinessLayer\bin\Debug\netcoreapp3.1\oreoApplicationCommonLayer.dll
+C:\Users\Admin\source\repos\oreoApplicationBackend\BusinessLayer\bin\Debug\netcoreapp3.1\oreoApplicationRepositoryLayer.dll
+C:\Users\Admin\source\repos\oreoApplicationBackend\BusinessLayer\bin\Debug\netcoreapp3.1\oreoApplicationRepositoryLayer.pdb
+C:\Users\Admin\source\repos\oreoApplicationBackend\BusinessLayer\bin\Debug\netcoreapp3.1\oreoApplicationCommonLayer.pdb
+C:\Users\Admin\source\repos\oreoApplicationBackend\BusinessLayer\obj\Debug\netcoreapp3.1\oreoApplicationBusinessLayer.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\oreoApplicationBackend\BusinessLayer\obj\Debug\netcoreapp3.1\oreoApplicationBusinessLayer.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\oreoApplicationBackend\BusinessLayer\obj\Debug\netcoreapp3.1\oreoApplicationBusinessLayer.AssemblyInfo.cs
+C:\Users\Admin\source\repos\oreoApplicationBackend\BusinessLayer\obj\Debug\netcoreapp3.1\oreoApplicationBusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\oreoApplicationBackend\BusinessLayer\obj\Debug\netcoreapp3.1\oreoApplicationBusinessLayer.csproj.CopyComplete
+C:\Users\Admin\source\repos\oreoApplicationBackend\BusinessLayer\obj\Debug\netcoreapp3.1\oreoApplicationBusinessLayer.dll
+C:\Users\Admin\source\repos\oreoApplicationBackend\BusinessLayer\obj\Debug\netcoreapp3.1\oreoApplicationBusinessLayer.pdb
