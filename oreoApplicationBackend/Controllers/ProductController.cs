@@ -60,12 +60,12 @@ namespace oreoApplicationBackend.Controllers
             {
                 if (this.productBL.AddProduct(products))
                 {
-                    return this.Ok(new { success = true, Message = "Products added successfully" });
+                    return this.Ok(new { success = true, Message = "Products was added successfully !!!" });
                 }
                 else
                 {
                     return StatusCode(StatusCodes.Status500InternalServerError,
-                        new { success = false, Message = "product record is not added " });
+                        new { success = false, Message = "Sorry, product was not added  !!!!" });
                 }
             }
             catch (Exception exception)
@@ -74,7 +74,7 @@ namespace oreoApplicationBackend.Controllers
                 if (exception != null)
                 {
                     return StatusCode(StatusCodes.Status409Conflict,
-                        new { success = false, ErrorMessage = "Cannot insert duplicate products" });
+                        new { success = false, ErrorMessage = "Sorry, can't add duplicate products" });
                 }
                 else
                 {
@@ -83,7 +83,8 @@ namespace oreoApplicationBackend.Controllers
 
             }
         }
-        /*[HttpPost("RemoveProducts")]
+
+        [HttpPost("RemoveProducts")]
         public IActionResult RemoveProduct(Product products)
         {
             try
@@ -112,7 +113,8 @@ namespace oreoApplicationBackend.Controllers
                 }
 
             }
-        }*/
+        }
+
     }
 }
   

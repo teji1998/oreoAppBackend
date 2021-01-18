@@ -27,19 +27,19 @@ namespace oreoApplicationBackend.Controllers
             this.configuration = configuration;
         }
 
-        [HttpPost("Register")]
+        [HttpPost("AdminRegister")]
         public IActionResult AdminRegister(AdminRegistration adminUser)
         {
             try
             {
                 if (this.adminBL.AdminRegister(adminUser))
                 {
-                    return this.Ok(new { success = true, Message = "user record added successfully" });
+                    return this.Ok(new { success = true, Message = "The admin has been added successfully !!!" });
                 }
                 else
                 {
                     return StatusCode(StatusCodes.Status500InternalServerError,
-                        new { success = false, Message = "user record is not added " });
+                        new { success = false, Message = "Sorry, admin has not been added !!! " });
                 }
             }
             catch (Exception exception)
@@ -47,7 +47,7 @@ namespace oreoApplicationBackend.Controllers
                 if (exception != null)
                 {
                     return StatusCode(StatusCodes.Status409Conflict,
-                        new { success = false, ErrorMessage = "Cannot insert duplicate Email values." });
+                        new { success = false, ErrorMessage = "Cannot add duplicate email id." });
                 }
                 else
                 {
@@ -57,7 +57,7 @@ namespace oreoApplicationBackend.Controllers
             }
         }
 
-        [HttpPost("Login")]
+        [HttpPost("")]
         public ActionResult AdminLogin(AdminLogin login)
         {
             try
@@ -69,14 +69,14 @@ namespace oreoApplicationBackend.Controllers
                     return this.Ok(new
                     {
                         success = true,
-                        Message = "User login successfully",
+                        Message = "You have logged in successfully !!!",
                         Data = result,
                         Token = token
                     });
                 }
                 else
                 {
-                    return this.NotFound(new { success = false, Message = "User login unsuccessfully" });
+                    return this.NotFound(new { success = false, Message = "Sorry user login was unsuccessfully" });
                 }
             }
             catch (Exception e)

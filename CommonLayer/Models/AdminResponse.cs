@@ -5,7 +5,7 @@ using System.Text;
 
 namespace oreoApplicationCommonLayer.Models
 {
-    public class AdminRegistration1
+    public class AdminResponse
     {
         public int AdminId { get; set; }
         [Required]

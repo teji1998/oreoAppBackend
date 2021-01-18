@@ -8,6 +8,6 @@ namespace oreoApplicationBusinessLayer.IBusinessService
     public interface IAdminBL
     {
         bool AdminRegister(AdminRegistration registration);
-        AdminRegistration1 AdminLogin(AdminLogin adminLogin);
+        AdminResponse AdminLogin(AdminLogin adminLogin);
     }
 }

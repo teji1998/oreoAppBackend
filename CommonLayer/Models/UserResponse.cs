@@ -6,7 +6,7 @@ using System.Text;
 
 namespace oreoApplicationCommonLayer.Models
 {
-    public class UserRegistration1
+    public class UserResponse
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

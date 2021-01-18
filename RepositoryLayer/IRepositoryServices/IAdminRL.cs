@@ -8,6 +8,6 @@ namespace oreoApplicationRepositoryLayer.IRepositoryServices
     public interface IAdminRL
     {
         bool AdminRegister(AdminRegistration register);
-        AdminRegistration1 loginAdmin(AdminLogin registration);
+        AdminResponse loginAdmin(AdminLogin registration);
     } 
 }

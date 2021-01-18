@@ -40,5 +40,17 @@ namespace oreoApplicationBusinessLayer.BusinessService
                 throw e;
             }
         }
+
+        public bool RemoveProduct(Product products)
+        {
+            try
+            {
+                return this.productRL.RemoveProduct(products);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
     }
 }

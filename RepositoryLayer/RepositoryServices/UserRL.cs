@@ -82,10 +82,10 @@ namespace oreoApplicationRepositoryLayer.Services
             }
         }
 
-        public UserRegistration1 login(UserLogin user)
+        public UserResponse login(UserLogin user)
         {
-            List<UserRegistration1> users = new List<UserRegistration1>();
-            UserRegistration1 registration = new UserRegistration1();
+            List<UserResponse> users = new List<UserResponse>();
+            UserResponse registration = new UserResponse();
             try
             {
                 using (this.connection)

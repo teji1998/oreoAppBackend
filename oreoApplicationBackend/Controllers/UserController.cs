@@ -27,19 +27,19 @@ namespace oreoApplicationBackend.Controllers
             this.configuration = configuration;
         }
 
-        [HttpPost("Register")]
+        [HttpPost("UserRegister")]
         public IActionResult RegisterUser(UserRegistration user)
         {
             try
             {
                 if (this.userBL.userRegister(user))
                 {
-                    return this.Ok(new { success = true, Message = "user record added successfully" });
+                    return this.Ok(new { Success = true, Message = "The user has been added successfully !!!" });
                 }
                 else
                 {
                     return StatusCode(StatusCodes.Status500InternalServerError,
-                        new { success = false, Message = "user record is not added " });
+                        new { Success = false, Message = "Sorry, user details not added !!! " });
                 }
             }
             catch (Exception exception)
@@ -47,17 +47,17 @@ namespace oreoApplicationBackend.Controllers
                 if (exception != null)
                 {
                     return StatusCode(StatusCodes.Status409Conflict,
-                        new { success = false, ErrorMessage = "Cannot insert duplicate Email values." });
+                        new { success = false, ErrorMessage = "Cannot add duplicate email id." });
                 }
                 else
                 {
-                    return this.BadRequest(new { success = false, Message = exception.Message });
+                    return this.BadRequest(new { Success = false, Message = exception.Message });
                 }
 
             }
         }
 
-        [HttpPost("Login")]
+        [HttpPost("UserLogin")]
         public ActionResult UserLogin(UserLogin login)
         {
             try
@@ -69,20 +69,20 @@ namespace oreoApplicationBackend.Controllers
                     return this.Ok(new
                     {
                         success = true,
-                        Message = "User login successfully",
+                        Message = "User was logged in successfully !!!",
                         Data = result,
                         Token = token
                     });
                 }
                 else
                 {
-                    return this.NotFound(new { success = false, Message = "User login unsuccessfully" });
+                    return this.NotFound(new { Success = false, Message = "User was not logged in !!!" });
                 }
             }
             catch (Exception e)
             {
 
-                return this.BadRequest(new { success = false, Message = e.Message });
+                return this.BadRequest(new { Success = false, Message = e.Message });
 
             }
         }

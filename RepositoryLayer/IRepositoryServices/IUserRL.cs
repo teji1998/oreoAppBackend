@@ -9,6 +9,6 @@ namespace RepositoryLayer.Interfaces
     public interface IUserRL
     {
         bool Register(UserRegistration register);
-        UserRegistration1 login(UserLogin registration);
+        UserResponse login(UserLogin registration);
     }
 }

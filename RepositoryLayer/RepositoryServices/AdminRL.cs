@@ -80,10 +80,10 @@ namespace oreoApplicationRepositoryLayer.RepositoryServices
             }
         }
 
-        public AdminRegistration1 loginAdmin(AdminLogin user)
+        public AdminResponse loginAdmin(AdminLogin user)
         {
-            List<AdminRegistration1> users = new List<AdminRegistration1>();
-            AdminRegistration1 registration = new AdminRegistration1();
+            List<AdminResponse> users = new List<AdminResponse>();
+            AdminResponse registration = new AdminResponse();
             try
             {
                 using (this.connection)

@@ -28,7 +28,7 @@ namespace oreoApplicationBusinessLayer.BusinessService
             }
         }
 
-        public AdminRegistration1 AdminLogin(AdminLogin adminLogin)
+        public AdminResponse AdminLogin(AdminLogin adminLogin)
         {
             try
             {

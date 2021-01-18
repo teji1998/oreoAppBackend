@@ -9,5 +9,6 @@ namespace oreoApplicationRepositoryLayer.IRepositoryServices
     {
         List<Product> GetAllProducts();
         bool AddProduct(Product products);
+        bool RemoveProduct(Product products);
     }
 }

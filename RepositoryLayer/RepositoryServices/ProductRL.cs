@@ -95,7 +95,8 @@ namespace oreoApplicationRepositoryLayer.RepositoryServices
                 this.connection.Close();
             }
         }
-        /*public bool RemoveProduct(Product products)
+
+        public bool RemoveProduct(Product products)
         {
             try
             {
@@ -125,6 +126,7 @@ namespace oreoApplicationRepositoryLayer.RepositoryServices
             {
                 this.connection.Close();
             }
-        }*/
+        }
+
     }
 }
