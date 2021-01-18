@@ -10,5 +10,6 @@ namespace BusinessLayer.Interfaces
     {
         bool userRegister(UserRegistration userRegistration);
         UserRegistration1 Login(UserLogin registration);
+
     }
 }

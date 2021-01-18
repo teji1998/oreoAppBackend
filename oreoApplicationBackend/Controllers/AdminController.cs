@@ -65,7 +65,7 @@ namespace oreoApplicationBackend.Controllers
                 var result = this.adminBL.AdminLogin(login);
                 if (result != null)
                 {
-                    string token = GenrateJWTToken(result.Email, result.AdminId);
+                    string token = GenrateJWTToken(result.Email, result.AdminId,result.Role);
                     return this.Ok(new
                     {
                         success = true,
@@ -92,7 +92,7 @@ namespace oreoApplicationBackend.Controllers
             return View();
         }*/
 
-        private string GenrateJWTToken(string email, long id)
+        private string GenrateJWTToken(string email, long id, string Role)
         {
             var secretkey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Key"]));
             var signinCredentials = new SigningCredentials(secretkey, SecurityAlgorithms.HmacSha256);
@@ -100,7 +100,7 @@ namespace oreoApplicationBackend.Controllers
             var claims = new List<Claim>
                         {
                             new Claim("email", email),
-                            //new Claim(ClaimTypes.Role, Role),
+                            new Claim(ClaimTypes.Role, Role),
                             new Claim("id",userId),
 
                         };

@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace oreoApplicationRepositoryLayer.IRepositoryServices
+namespace oreoApplicationBusinessLayer.IBusinessService
 {
-    public interface IProductRL
+    public interface IProductBL
     {
         List<Product> GetAllProducts();
         bool AddProduct(Product products);

@@ -14,7 +14,7 @@ namespace oreoApplicationCommonLayer.Models
         [Required]
         public double ActualPrice { get; set; }
         [Required]
-        public double DiscountPrice { get; set; }
+        public double DiscountedPrice { get; set; }
         [Required]
         public int ProductQuantity { get; set; }
         [Required]

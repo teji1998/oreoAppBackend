@@ -43,8 +43,9 @@ namespace oreoApplicationBackend
             services.AddTransient<IUserRL, UserRL>();
             services.AddTransient<IAdminBL, AdminBL>();
             services.AddTransient<IAdminRL, AdminRL>();
-            //services.AddTransient<IProductBL, ProductBL>();
-            //services.AddTransient<IProductRL, ProductRL>();
+            services.AddTransient<IProductBL, ProductBL>();
+           // services.AddTransient<IProductBL, ProductBL>();
+            services.AddTransient<IProductRL, ProductRL>();
             services.AddAuthentication(x =>
             {
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;

@@ -89,7 +89,7 @@ namespace oreoApplicationRepositoryLayer.RepositoryServices
                 using (this.connection)
                 {
                     var password = Encryptdata(user.Password);
-                    SqlCommand command = new SqlCommand("spLogin", this.connection);
+                    SqlCommand command = new SqlCommand("spLoginAdmin", this.connection);
                     command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("@Email", user.Email);
                     command.Parameters.AddWithValue("@password", password);
