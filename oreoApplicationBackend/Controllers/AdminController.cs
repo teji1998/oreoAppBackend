@@ -27,19 +27,19 @@ namespace oreoApplicationBackend.Controllers
             this.configuration = configuration;
         }
 
-        [HttpPost("AdminRegister")]
+        [HttpPost()]
         public IActionResult AdminRegister(AdminRegistration adminUser)
         {
             try
             {
                 if (this.adminBL.AdminRegister(adminUser))
                 {
-                    return this.Ok(new { success = true, Message = "The admin has been added successfully !!!" });
+                    return this.Ok(new { Success = true, Message = "The admin has been added successfully !!!" });
                 }
                 else
                 {
                     return StatusCode(StatusCodes.Status500InternalServerError,
-                        new { success = false, Message = "Sorry, admin has not been added !!! " });
+                        new { Success = false, Message = "Sorry, admin has not been added !!! " });
                 }
             }
             catch (Exception exception)
@@ -47,7 +47,7 @@ namespace oreoApplicationBackend.Controllers
                 if (exception != null)
                 {
                     return StatusCode(StatusCodes.Status409Conflict,
-                        new { success = false, ErrorMessage = "Cannot add duplicate email id." });
+                        new { Success = false, ErrorMessage = "Cannot add duplicate email id." });
                 }
                 else
                 {
@@ -57,7 +57,7 @@ namespace oreoApplicationBackend.Controllers
             }
         }
 
-        [HttpPost("")]
+        [HttpPost("Login")]
         public ActionResult AdminLogin(AdminLogin login)
         {
             try
@@ -76,21 +76,16 @@ namespace oreoApplicationBackend.Controllers
                 }
                 else
                 {
-                    return this.NotFound(new { success = false, Message = "Sorry user login was unsuccessfully" });
+                    return this.NotFound(new { Success = false, Message = "Sorry user login was unsuccessfully" });
                 }
             }
             catch (Exception e)
             {
 
-                return this.BadRequest(new { success = false, Message = e.Message });
+                return this.BadRequest(new { Success = false, Message = e.Message });
 
             }
         }
-
-        /*public IActionResult Index()
-        {
-            return View();
-        }*/
 
         private string GenrateJWTToken(string email, long id, string Role)
         {

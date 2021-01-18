@@ -27,7 +27,7 @@ namespace oreoApplicationBackend.Controllers
             this.configuration = configuration;
         }
 
-        [HttpPost("UserRegister")]
+        [HttpPost()]
         public IActionResult RegisterUser(UserRegistration user)
         {
             try
@@ -47,7 +47,7 @@ namespace oreoApplicationBackend.Controllers
                 if (exception != null)
                 {
                     return StatusCode(StatusCodes.Status409Conflict,
-                        new { success = false, ErrorMessage = "Cannot add duplicate email id." });
+                        new { Success = false, ErrorMessage = "Cannot add duplicate email id." });
                 }
                 else
                 {
@@ -57,7 +57,7 @@ namespace oreoApplicationBackend.Controllers
             }
         }
 
-        [HttpPost("UserLogin")]
+        [HttpPost("Login")]
         public ActionResult UserLogin(UserLogin login)
         {
             try
@@ -68,7 +68,7 @@ namespace oreoApplicationBackend.Controllers
                     string token = GenrateJWTToken(result.Email, result.UserId,result.Role);
                     return this.Ok(new
                     {
-                        success = true,
+                        Success = true,
                         Message = "User was logged in successfully !!!",
                         Data = result,
                         Token = token
@@ -86,11 +86,6 @@ namespace oreoApplicationBackend.Controllers
 
             }
         }
-
-        /*public IActionResult Index()
-        {
-            return View();
-        }*/
 
         private string GenrateJWTToken(string email, long id,string Role)
         {

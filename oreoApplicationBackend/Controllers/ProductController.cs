@@ -24,7 +24,7 @@ namespace oreoApplicationBackend.Controllers
             this.configuration = configuration;
         }
 
-        [HttpGet("GetProducts")]
+        [HttpGet()]
         [Authorize(Roles = "Admin,User")]
 
         public IActionResult GetAllProducts()
@@ -34,25 +34,20 @@ namespace oreoApplicationBackend.Controllers
                 List<Product> productList = this.productBL.GetAllProducts();
                 if (productList != null)
                 {
-                    return this.Ok(new { success = true, Message="Product records obtained successfully", data = productList });
+                    return this.Ok(new { Success = true, Message="Product records obtained successfully", data = productList });
                 }
                 else
                 {
-                    return this.NotFound(new { success = false, Message = "Product records obtaining unsuccessful" });
+                    return this.NotFound(new { Success = false, Message = "Product records obtaining unsuccessful" });
                 }
             }
             catch (Exception e)
             {
-                return this.BadRequest(new { success = false, Message = e.Message });
+                return this.BadRequest(new { Success = false, Message = e.Message });
             }
         }
 
-
-        /*public IActionResult Index()
-        {
-            return View();
-        }*/
-        [HttpPost("AddProducts")]
+        [HttpPost("Add")]
         [Authorize(Roles = "Admin")]
         public IActionResult AddProducts(Product products)
         {
@@ -60,12 +55,12 @@ namespace oreoApplicationBackend.Controllers
             {
                 if (this.productBL.AddProduct(products))
                 {
-                    return this.Ok(new { success = true, Message = "Products was added successfully !!!" });
+                    return this.Ok(new { Success = true, Message = "Products was added successfully !!!" });
                 }
                 else
                 {
                     return StatusCode(StatusCodes.Status500InternalServerError,
-                        new { success = false, Message = "Sorry, product was not added  !!!!" });
+                        new { Success = false, Message = "Sorry, product was not added  !!!!" });
                 }
             }
             catch (Exception exception)
@@ -74,7 +69,7 @@ namespace oreoApplicationBackend.Controllers
                 if (exception != null)
                 {
                     return StatusCode(StatusCodes.Status409Conflict,
-                        new { success = false, ErrorMessage = "Sorry, can't add duplicate products" });
+                        new { Success = false, ErrorMessage = "Sorry, can't add duplicate products" });
                 }
                 else
                 {
@@ -84,7 +79,7 @@ namespace oreoApplicationBackend.Controllers
             }
         }
 
-        [HttpPost("RemoveProducts")]
+        [HttpPost("Remove")]
         public IActionResult RemoveProduct(Product products)
         {
             try
@@ -96,7 +91,7 @@ namespace oreoApplicationBackend.Controllers
                 else
                 {
                     return StatusCode(StatusCodes.Status500InternalServerError,
-                        new { success = false, Message = "product record is not removed " });
+                        new { Success = false, Message = "product record is not removed " });
                 }
             }
             catch (Exception exception)
@@ -105,7 +100,7 @@ namespace oreoApplicationBackend.Controllers
                 if (exception != null)
                 {
                     return StatusCode(StatusCodes.Status409Conflict,
-                        new { success = false, ErrorMessage = "Cannot insert duplicate products" });
+                        new { Success = false, ErrorMessage = "Cannot insert duplicate products" });
                 }
                 else
                 {
