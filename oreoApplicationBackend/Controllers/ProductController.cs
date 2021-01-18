@@ -25,7 +25,7 @@ namespace oreoApplicationBackend.Controllers
         }
 
         [HttpGet("GetProducts")]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin,User")]
 
         public IActionResult GetAllProducts()
         {
